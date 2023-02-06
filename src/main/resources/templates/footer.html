@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+          <link rel="stylesheet" href="/css/footer.css">
+    <title>QuickMart</title>
+     <link rel="icon" 
+     type="image/png" 
+     href="/images/Newlogo.png">
+    
+</head>
+<body >
+
+<footer th:fragment="foot" class="footer-section  font-weight-light sticky-footer" style="  margin-top:auto;" >
+    <div class="row">
+        <div class="col">
+            <div class="sign-grds">
+                <div class="col-md-6 sign-gd-two">
+                    <h4 style="text-align: left;">Contact Us:</h4>
+                    <ul style="text-align: left;">
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Address : Saharanpur, U.P, India</li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email : <a href="mailto:rajathanda92@gmail.com">QuickMart-India</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone : +91-8410081757</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <br/><br/><br/>
+            <center>
+                <div class="container">
+                    <h6>
+                        &copy;  <span id="year"></span> QuickMart - Online Shopping System |<a href="#" target="_blank"> Designed by : ShilongTeam</a>
+                    </h6>
+                </div>
+            </center>
+        </div>
+    </div>
+    
+    <script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+</footer>
+
+
+</body>

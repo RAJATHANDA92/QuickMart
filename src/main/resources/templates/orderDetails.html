@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="/css/footer.css">
+    <title>QuickMart</title>
+     <link rel="icon" 
+     type="image/png" 
+     href="/images/Newlogo.png">
+</head>
+<body>
+<nav th:replace="index::nav"></nav>
+<div class="container-fluid" style="background:  #fdedff">
+    <h5 class="text-center my-2 border-bottom text-white p-2" style="background: purple;" >Order Details of No.<span th:text="${o.id }"></span></h5>
+  
+  <!--  <p>Customer Name : <strong th:text="${o.customer.firstName }"></strong></p>  -->
+  <!-- <p>Customer Name : <strong th:text="${o.customer.firstName} + ${o.customer.lastName}"></strong></p> -->
+  
+    <div class="row">
+        <div class="col-sm-7">
+            <div class='p-3 rounded bg-white'>
+                
+	                <div th:each=" item :${items }" class="border-bottom pb-3">
+	                    <img class="mr-2 float-left" th:src="${'/productImages/' +item.product.imageName }" width="90" height="90">
+	                    <div class="p-2">
+	                        <h6 th:text="${item.product.name }"></h6>
+	                      <h6 th:text="${item.product.description }"></h6>
+	                        <h6>&#8377;<span th:text="${item.price}"></span> </h6>
+	                        
+	                    </div>
+	
+	                    <div class="clearfix"></div>
+	                </div>
+                
+            </div>
+        </div>
+       <!--  <div class="col-sm-5">
+            <div class='rounded bg-white p-2'>
+                <h5>Payment Details</h5>
+                <table class="table">
+                    <tr>
+                        <th>MRP Total</th>
+                        <th class="text-right font-weight-bold">&#8377; ${o.totalOrderPrice}</th>
+                    </tr>
+                   
+                </table>
+            </div>
+        </div>
+    </div> -->
+    
+</div>
+<br>
+ <h5 class="text-center p-2">Your order will be delivered to you within 2-3 working days.</h5>
+ <br>
+<footer th:replace="footer::foot"></footer> 
+</body>

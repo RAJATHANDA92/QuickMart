@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="/css/footer.css">
+     <title>QuickMart</title>
+     <link rel="icon" 
+     type="image/png" 
+     href="/images/Newlogo.png">
+</head>
+<body>
+<nav th:replace="index::nav"></nav>
+<h5 class="p-2" style="border-bottom: 2px solid green;">Orders List</h5>
+<div class="container">
+            <table class="table table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Order Date</th>              
+                       <!--  <th>Order Value</th>  -->       
+                        <th>Show Details</th>
+                         <th>Cancel Order</th>
+                    </tr>
+                </thead>
+                <tbody>
+               
+                <tr th:each="order : ${orders}">
+                    <td th:text="${order.id}"></td>
+                    <td th:text="${order.orderdate}"></td>   
+                    <!-- <td th:text="${total}">&#8377;</td> -->   
+                    <td>
+                        <a th:href="@{/details/{id} (id=${order.id})}" class="btn btn-sm btn-primary"><i class="fa fa-eye"></i>  Details</a>                        
+                    </td>
+                    <td><a href="" th:href="@{/order/delete/{id}(id=${order.id})}" class="btn btn-danger">Cancel</a></td>
+                </tr>
+               
+                </tbody>
+            </table>
+        </div>
+        
+        <footer th:replace="footer::foot"></footer> 
+        </body>
